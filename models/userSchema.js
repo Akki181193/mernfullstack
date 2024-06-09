@@ -38,16 +38,7 @@ const userSchema = new mongoose.Schema({
     ]
 })
 
-// userSchema.pre('save', async function(next){
-//     console.log("hash is running")
-//     if(this.isModified('password')) {
-//         this.password = bcrypt.hash(this.password, 10);
-//         this.cpassword = bcrypt.hash(this.cpassword, 10);
 
-//     }
-//     next();
-//     console.log("hash is running after")
-// })
 
 
 
@@ -68,7 +59,7 @@ userSchema.pre("save", async function(next){
         next(error)
         
     }
-     console.log("hash is running")
+     console.log("hash is running");
 })
 
 userSchema.methods.generateAuthToken = async function(){
